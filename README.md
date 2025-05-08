@@ -13,7 +13,6 @@
 * [Llaves SSH](#llaves-ssh)
 * [Buenas prácticas](#buenas-prácticas)
 * [Commits convencionales](#commits-convencionales)
-* [Commitlint y Husky](#commitlint-y-husky)
 * [Recursos útiles](#recursos-útiles)
 
 ---
@@ -227,38 +226,6 @@ git commit -m "docs: actualizar README"
 
 ---
 
-## Commitlint y Husky
-
-### ¿Qué es `commitlint`?
-
-Una herramienta que valida que los mensajes de commit respeten el formato de los [Commits Convencionales](#commits-convencionales).
-
-### ¿Qué es `husky`?
-
-Permite ejecutar scripts automáticos en *ganchos de Git* como `pre-commit` o `commit-msg`. Se usa para activar `commitlint` antes de confirmar.
-
-### Instalación rápida:
-
-```bash
-npm install --save-dev husky @commitlint/{config-conventional,cli}
-npx husky install
-npx husky add .husky/commit-msg "npx --no -- commitlint --edit $1"
-```
-
-### Configuración mínima:
-
-Agregar en `package.json`:
-
-```json
-"commitlint": {
-  "extends": ["@commitlint/config-conventional"]
-}
-```
-
-> Así evitás commits con mensajes poco claros o que rompen el estándar del equipo.
-
----
-
 ## Recursos útiles
 
 * [Git oficial](https://git-scm.com/doc)
@@ -266,6 +233,3 @@ Agregar en `package.json`:
 * [GitHub SSH Keys](https://docs.github.com/es/authentication/connecting-to-github-with-ssh)
 * [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/)
 * [Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/)
-* [Commitlint](https://commitlint.js.org/)
-* [Husky](https://github.com/typicode/husky)
-
